@@ -15,7 +15,7 @@ export const getFactorFromNDays = (days) => {
   if (days < 3) {
     return 0;
   }
-  return Math.floor(days / 3);
+  return (days / 3);
 };
 
 export const NumberOfInfectedPeopleForNDays = (
@@ -24,7 +24,7 @@ export const NumberOfInfectedPeopleForNDays = (
   unit
 ) => {
   const days = convertToDays(digit, unit);
-  return Math.floor(currentlyInfected * 2 ** getFactorFromNDays(days));
+  return currentlyInfected * 2 ** getFactorFromNDays(days);
 };
 
 const covid19ImpactEstimator = (data) => {
