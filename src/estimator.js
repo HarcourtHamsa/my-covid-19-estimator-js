@@ -7,7 +7,7 @@ export const convertToDays = (digit, unit) => {
     case 'months':
       return Math.trunc(digit * 30);
     default:
-      throw new Error('invalid unit passed');
+      throw new Error('invalid unit');
   }
 };
 
