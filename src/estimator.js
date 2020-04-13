@@ -12,9 +12,6 @@ export const convertToDays = (digit, unit) => {
 };
 
 export const getFactorFromNDays = (days) => {
-  if (days < 3) {
-    return 0;
-  }
   return Math.floor(days / 3);
 };
 
