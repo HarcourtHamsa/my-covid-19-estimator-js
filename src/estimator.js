@@ -74,11 +74,11 @@ const covid19ImpactEstimator = (data) => {
 
   // ICU care
   impact.casesForICUByRequestedTime = Math.trunc(
-    0.05 * impact.infectionsByRequestedTime
+    0.05 * impact.severeCasesByRequestedTime
   );
 
   severeImpact.casesForICUByRequestedTime = Math.trunc(
-    0.05 * severeImpact.infectionsByRequestedTime
+    0.05 * severeImpact.severeCasesByRequestedTime
   );
 
   // Ventilators
