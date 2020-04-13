@@ -3,9 +3,9 @@ export const convertToDays = (digit, unit) => {
     case 'days':
       return digit;
     case 'weeks':
-      return (digit * 7);
+      return Math.trunc(digit * 7);
     case 'months':
-      return (digit * 30);
+      return Math.trunc(digit * 30);
     default:
       throw new Error('invalid unit');
   }
