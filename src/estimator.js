@@ -11,9 +11,7 @@ export const convertToDays = (digit, unit) => {
   }
 };
 
-export const getFactorFromNDays = (days) => {
-  return Math.floor(days / 3);
-};
+export const getFactorFromNDays = (days) => Math.floor(days / 3);
 
 export const NumberOfInfectedPeopleForNDays = (
   currentlyInfected,
