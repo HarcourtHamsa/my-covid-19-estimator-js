@@ -91,15 +91,15 @@ const covid19ImpactEstimator = (data) => {
   );
 
   // Dollars in Flight
-  impact.dollarsInFlight = Math.trunc(impact.infectionsByRequestedTime
+  impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime
     * avgDailyIncomePopulation)
     * avgDailyIncomeInUSD
-    * convertToDays(timeToElapse, periodType);
+    * convertToDays(timeToElapse, periodType));
 
-  severeImpact.dollarsInFlight = Math.trunc(severeImpact.infectionsByRequestedTime
+  severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime
      * avgDailyIncomePopulation)
     * avgDailyIncomeInUSD
-    * convertToDays(timeToElapse, periodType);
+    * convertToDays(timeToElapse, periodType));
 
   return {
     data, // Input data
