@@ -73,21 +73,31 @@ const covid19ImpactEstimator = (data) => {
   // CHALLENGE 3
 
   // ICU care
-  impact.casesForICUByRequiredTime = 0.05 * impact.infectionsByRequestedTime;
+  impact.casesForICUByRequiredTime = Math.trunc(
+    0.05 * impact.infectionsByRequestedTime
+  );
 
-  severeImpact.casesForICUByRequiredTime = 0.05 * severeImpact.infectionsByRequestedTime;
+  severeImpact.casesForICUByRequiredTime = Math.trunc(
+    0.05 * severeImpact.infectionsByRequestedTime
+  );
 
   // Ventilators
-  impact.casesForVentilatorsByRequiredTime = 0.02 * impact.infectionsByRequestedTime;
+  impact.casesForVentilatorsByRequiredTime = Math.trunc(
+    0.02 * impact.infectionsByRequestedTime
+  );
 
-  severeImpact.casesForVentilatorsByRequiredTime = 0.02 * severeImpact.infectionsByRequestedTime;
+  severeImpact.casesForVentilatorsByRequiredTime = Math.trunc(
+    0.02 * severeImpact.infectionsByRequestedTime
+  );
 
   // Dollars in Flight
-  impact.dollarsInFlight = (impact.infectionsByRequestedTime * avgDailyIncomePopulation)
+  impact.dollarsInFlight = impact.infectionsByRequestedTime
+    * avgDailyIncomePopulation
     * avgDailyIncomeInUSD
     * convertToDays(timeToElapse, periodType);
 
-  severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime * avgDailyIncomePopulation)
+  severeImpact.dollarsInFlight = severeImpact.infectionsByRequestedTime
+    * avgDailyIncomePopulation
     * avgDailyIncomeInUSD
     * convertToDays(timeToElapse, periodType);
 
