@@ -1,5 +1,5 @@
 import covid19ImpactEstimator, {
-  getFactorFromNDays,
+  getFactor,
   NumberOfInfectedPeopleForNDays,
   convertToDays
 } from './estimator';
@@ -27,11 +27,11 @@ describe('covid19ImpactEstimator', () => {
   });
 });
 
-describe('getFactorFromNDays', () => {
+describe('getFactor', () => {
   it('should return the factor for a given number of days ', () => {
-    expect(getFactorFromNDays(1)).toEqual(0);
-    expect(getFactorFromNDays(30)).toEqual(10);
-    expect(getFactorFromNDays(53)).toEqual(17);
+    expect(getFactor(1)).toEqual(0);
+    expect(getFactor(30)).toEqual(10);
+    expect(getFactor(53)).toEqual(17);
   });
 });
 
