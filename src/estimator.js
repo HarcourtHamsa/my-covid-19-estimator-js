@@ -15,7 +15,7 @@ export const getFactorFromNDays = (days) => {
   if (days < 3) {
     return 0;
   }
-  return (days / 3);
+  return Math.floor(days / 3);
 };
 
 export const NumberOfInfectedPeopleForNDays = (
