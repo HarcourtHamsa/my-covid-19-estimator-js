@@ -19,7 +19,7 @@ export const NumberOfInfectedPeopleForNDays = (
   unit
 ) => {
   const days = convertToDays(digit, unit);
-  return currentlyInfected * 2 ** getFactorFromNDays(days);
+  return Math.trunc(currentlyInfected * 2 ** getFactorFromNDays(days));
 };
 
 const covid19ImpactEstimator = (data) => {
