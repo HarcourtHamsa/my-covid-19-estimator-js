@@ -15,7 +15,7 @@ export const getFactorFromNDays = (days) => {
   if (days < 3) {
     return 0;
   }
-  return Math.floor(days / 3);
+  return (days / 3);
 };
 
 export const NumberOfInfectedPeopleForNDays = (
@@ -58,20 +58,20 @@ const covid19ImpactEstimator = (data) => {
   // CHALLENGE 2
 
   // Severe cases by Requested time
-  impact.severeCasesByRequestedTime = Math.floor(
+  impact.severeCasesByRequestedTime = (
     0.15 * impact.infectionsByRequestedTime
   );
 
-  severeImpact.severeCasesByRequestedTime = Math.floor(
+  severeImpact.severeCasesByRequestedTime = (
     0.15 * severeImpact.infectionsByRequestedTime
   );
 
   // Hospital Beds By Requested Time
-  impact.hospitalBedsByRequestedTime = Math.floor(
+  impact.hospitalBedsByRequestedTime = (
     0.35 * totalHospitalBeds - impact.severeCasesByRequestedTime
   );
 
-  severeImpact.hospitalBedsByRequestedTime = Math.floor(
+  severeImpact.hospitalBedsByRequestedTime = (
     0.35 * totalHospitalBeds - severeImpact.severeCasesByRequestedTime
   );
 
