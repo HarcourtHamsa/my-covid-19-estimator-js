@@ -3,9 +3,9 @@ export const convertToDays = (digit, unit) => {
     case 'days':
       return digit;
     case 'weeks':
-      return Math.floor(digit * 7);
+      return (digit * 7);
     case 'months':
-      return Math.floor(digit * 30);
+      return (digit * 30);
     default:
       throw new Error('invalid unit');
   }
@@ -19,7 +19,7 @@ export const NumberOfInfectedPeopleForNDays = (
   unit
 ) => {
   const days = convertToDays(digit, unit);
-  return Math.trunc(currentlyInfected * 2 ** getFactorFromNDays(days));
+  return currentlyInfected * 2 ** getFactorFromNDays(days);
 };
 
 const covid19ImpactEstimator = (data) => {
