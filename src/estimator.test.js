@@ -1,7 +1,7 @@
 import covid19ImpactEstimator, {
   getFactor,
   NumberOfInfectedPeopleForNDays,
-  convertToDays
+  normalizeDays
 } from './estimator';
 
 describe('covid19ImpactEstimator', () => {
@@ -44,8 +44,8 @@ describe('infectedPeopleForNDays', () => {
 
 describe('convertToDays', () => {
   it('should convert the  input to days depending on the unit given', () => {
-    expect(convertToDays(3, 'weeks')).toEqual(21);
-    expect(convertToDays(2, 'months')).toEqual(62);
-    expect(convertToDays(2, 'days')).toEqual(2);
+    expect(normalizeDays(3, 'weeks')).toEqual(21);
+    expect(normalizeDays(2, 'months')).toEqual(62);
+    expect(normalizeDays(2, 'days')).toEqual(2);
   });
 });

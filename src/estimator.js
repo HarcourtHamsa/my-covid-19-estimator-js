@@ -1,4 +1,4 @@
-export const convertToDays = (digit, unit) => {
+export const normalizeDays = (digit, unit) => {
   switch (unit) {
     case 'days':
       return digit;
@@ -18,7 +18,7 @@ export const NumberOfInfectedPeopleForNDays = (
   digit,
   unit
 ) => {
-  const days = convertToDays(digit, unit);
+  const days = normalizeDays(digit, unit);
   return Math.trunc(currentlyInfected * 2 ** getFactor(days));
 };
 
@@ -94,12 +94,12 @@ const covid19ImpactEstimator = (data) => {
   impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime
     * avgDailyIncomePopulation
     * avgDailyIncomeInUSD)
-    / convertToDays(timeToElapse, periodType));
+    / normalizeDays(timeToElapse, periodType));
 
   severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime
      * avgDailyIncomePopulation
     * avgDailyIncomeInUSD)
-    / convertToDays(timeToElapse, periodType));
+    / normalizeDays(timeToElapse, periodType));
 
   return {
     data, // Input data
