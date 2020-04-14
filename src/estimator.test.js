@@ -1,6 +1,6 @@
 import covid19ImpactEstimator, {
   getFactor,
-  NumberOfInfectedPeopleForNDays,
+  infectedPeopleForNDays,
   normalizeDays
 } from './estimator';
 
@@ -38,7 +38,7 @@ describe('getFactor', () => {
 
 describe('infectedPeopleForNDays', () => {
   it('should double the number of infected people every 3 days', () => {
-    expect(NumberOfInfectedPeopleForNDays(1, 30, 'days')).toEqual(1024);
+    expect(infectedPeopleForNDays(1, 30, 'days')).toEqual(1024);
   });
 });
 

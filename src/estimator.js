@@ -13,7 +13,7 @@ export const normalizeDays = (digit, unit) => {
 
 export const getFactor = (days) => Math.trunc(days / 3);
 
-export const NumberOfInfectedPeopleForNDays = (
+export const infectedPeopleForNDays = (
   currentlyInfected,
   digit,
   unit
@@ -38,13 +38,13 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.currentlyInfected = reportedCases * 50;
 
   // Infections by requested time
-  impact.infectionsByRequestedTime = NumberOfInfectedPeopleForNDays(
+  impact.infectionsByRequestedTime = infectedPeopleForNDays(
     impact.currentlyInfected,
     timeToElapse,
     periodType
   );
 
-  severeImpact.infectionsByRequestedTime = NumberOfInfectedPeopleForNDays(
+  severeImpact.infectionsByRequestedTime = infectedPeopleForNDays(
     severeImpact.currentlyInfected,
     timeToElapse,
     periodType
